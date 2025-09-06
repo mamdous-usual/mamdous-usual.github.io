@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamdous Laskar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Terminal Icon Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI0IiBmaWxsPSIjMjEyNTJiIi8+CiAgPHJlY3QgeD0iMiIgeT0iMiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iMiIgZmlsbD0iIzI4MmMzNCIvPgogIDxyZWN0IHg9IjIiIHk9IjIiIHdpZHRoPSIyOCIgaGVpZ2h0PSI2IiBmaWxsPSIjMjEyNTJiIi8+CiAgPGNpcmNsZSBjeD0iNiIgY3k9IjUiIHI9IjEuNSIgZmlsbD0iI2UwNmM3NSIvPgogIDxjaXJjbGUgY3g9IjEwIiBjeT0iNSIgcj0iMS41IiBmaWxsPSIjZTVjMDdiIi8+CiAgPGNpcmNsZSBjeD0iMTQiIGN5PSI1IiByPSIxLjUiIGZpbGw9IiM5OGMzNzkiLz4KICA8dGV4dCB4PSI0IiB5PSIxNyIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI4IiBmaWxsPSIjOThjMzc5Ij4kPC90ZXh0PgogIDx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjgiIGZpbGw9IiM2MWFmZWYiPmxzPC90ZXh0PgogIDx0ZXh0IHg9IjQiIHk9IjI1IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjciIGZpbGw9IiNhYmIyYmYiPmhvbWUvPC90ZXh0Pgo8L3N2Zz4K">
+    <!-- Fallback PNG favicon for older browsers -->
+    <link rel="alternate icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAIoSURBVFiFtZc9axRBFMef2QQSCxsLwcLCQrGwsLBQsLGwsLCwsLGwsLBQsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLCwsLGwsLC">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: #282c34;
+            color: #abb2bf;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .terminal-container {
+            min-height: 100vh;
+            padding: clamp(10px, 3vw, 20px);
+            background: linear-gradient(135deg, #282c34 0%, #1e2227 100%);
+        }
+
+        .terminal-window {
+            max-width: min(900px, 100%);
+            margin: 0 auto;
+            background: #282c34;
+            border-radius: clamp(6px, 2vw, 12px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid #3e4451;
+            overflow: hidden;
+            animation: slideIn 0.8s ease-out;
+            min-height: calc(100vh - clamp(20px, 6vw, 40px));
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .terminal-header {
+            background: #21252b;
+            padding: clamp(8px, 2vw, 12px) clamp(12px, 3vw, 16px);
+            display: flex;
+            align-items: center;
+            gap: clamp(6px, 1.5vw, 8px);
+            border-bottom: 1px solid #3e4451;
+        }
+
+        .window-controls {
+            display: flex;
+            gap: 6px;
+        }
+
+        .control {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .control:hover {
+            opacity: 0.8;
+        }
+
+        .close { background: #e06c75; }
+        .minimize { background: #e5c07b; }
+        .maximize { background: #98c379; }
+
+        .terminal-title {
+            margin-left: 12px;
+            color: #abb2bf;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .terminal-content {
+            padding: clamp(16px, 4vw, 24px);
+            min-height: calc(50vh);
+            font-size: clamp(12px, 2.5vw, 14px);
+        }
+
+        .output-line {
+            margin-bottom: 8px;
+            animation: typeIn 0.5s ease-out;
+        }
+
+        @keyframes typeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .prompt {
+            color: #98c379;
+            font-weight: 500;
+        }
+
+        .command {
+            color: #61afef;
+            font-weight: 500;
+        }
+
+        .output {
+            color: #abb2bf;
+            margin-left: 0;
+            white-space: pre-wrap;
+        }
+
+        .error {
+            color: #e06c75;
+        }
+
+        .success {
+            color: #98c379;
+        }
+
+        .warning {
+            color: #e5c07b;
+        }
+
+        .info {
+            color: #56b6c2;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: clamp(8px, 3vw, 16px);
+            margin: clamp(12px, 3vw, 16px) 0;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .social-icon {
+            color: #61afef;
+            font-size: clamp(16px, 4vw, 20px);
+            text-decoration: none;
+            padding: clamp(6px, 1.5vw, 8px);
+            border-radius: 6px;
+            background: rgba(97, 175, 239, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .social-icon:hover {
+            background: rgba(97, 175, 239, 0.2);
+            border-color: #61afef;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(97, 175, 239, 0.3);
+        }
+
+        .input-line {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+        .terminal-input {
+            background: transparent;
+            border: none;
+            color: #abb2bf;
+            font-family: inherit;
+            font-size: clamp(12px, 2.5vw, 14px);
+            outline: none;
+            flex: 1;
+            margin-left: 8px;
+            min-width: 0;
+        }
+
+        .cursor {
+            background: #abb2bf;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .ascii-art {
+            color: #56b6c2;
+            font-size: clamp(6px, 1.8vw, 12px);
+            line-height: 1.2;
+            margin: clamp(8px, 3vw, 16px) 0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .file-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .file-item {
+            color: #e5c07b;
+            padding: 4px 0;
+        }
+
+        .directory {
+            color: #61afef;
+            font-weight: 500;
+        }
+
+        .executable {
+            color: #98c379;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .terminal-window {
+                border-radius: 8px;
+                min-height: calc(100vh - 20px);
+            }
+            
+            .file-list {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 6px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+                gap: 12px;
+            }
+            
+            .social-icon {
+                font-size: 16px;
+                padding: 6px 8px;
+            }
+            
+            .ascii-art {
+                font-size: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terminal-container {
+                padding: 8px;
+            }
+            
+            .terminal-window {
+                border-radius: 6px;
+                min-height: calc(100vh - 16px);
+            }
+            
+            .terminal-content {
+                padding: 12px;
+                font-size: 12px;
+            }
+            
+            .social-icon {
+                font-size: 14px;
+                padding: 4px 6px;
+                gap: 4px;
+            }
+            
+            .ascii-art {
+                font-size: 6px;
+                margin: 8px 0;
+            }
+            
+            .file-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
+                font-size: 11px;
+            }
+            
+            .input-line {
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+            
+            .prompt {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .ascii-art {
+                font-size: 5px;
+                transform: scale(0.8);
+                transform-origin: left top;
+            }
+            
+            .social-icons {
+                gap: 8px;
+            }
+            
+            .social-icon {
+                font-size: 12px;
+                padding: 3px 5px;
+            }
+        }
+
+        .help-section {
+            margin: 16px 0;
+        }
+
+        .help-command {
+            color: #e5c07b;
+            font-weight: 500;
+        }
+
+        .help-description {
+            color: #abb2bf;
+            margin-left: 16px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="window-controls">
+                    <div class="control close"></div>
+                    <div class="control minimize"></div>
+                    <div class="control maximize"></div>
+                </div>
+                <div class="terminal-title">mamdous@localhost:~</div>
+            </div>
+            
+            <div class="terminal-content">
+                <div id="output">
+                    <div class="output-line">
+                        <div class="ascii-art">
+ ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
+ ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝
+ ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  
+ ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  
+ ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
+  ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+                        </div>
+                    </div>
+                    
+                    <div class="output-line">
+                        <span class="success">System initialized successfully!</span>
+                    </div>
+                    
+                    <div class="output-line">
+                        <span class="info">Type 'help' to see available commands.</span>
+                    </div>
+                    
+                    <div class="output-line">
+                        <span class="warning">Guest session active - Limited privileges</span>
+                    </div>
+                    
+                    <br>
+                </div>
+                
+                <div class="input-line">
+                    <span class="prompt">visitor@portfolio:~$</span>
+                    <input type="text" class="terminal-input" id="commandInput" placeholder="Enter command..." autocomplete="off">
+                    <span class="cursor">█</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+        const input = document.getElementById('commandInput');
+        
+        // Focus input on page load and click
+        window.addEventListener('load', () => input.focus());
+        document.addEventListener('click', () => input.focus());
+        
+        const commands = {
+            help: () => `
+<div class="help-section">
+<div class="help-command">Available Commands:</div>
+<div class="help-description">whoami     - Display user information</div>
+<div class="help-description">ls         - List directory contents</div>
+<div class="help-description">cat &lt;file&gt; - Display file contents</div>
+<div class="help-description">echo &lt;msg&gt; - Display message</div>
+<div class="help-description">about      - About me</div>
+<div class="help-description">social     - Display social media links</div>
+<div class="help-description">contact    - Contact information</div>
+<div class="help-description">skills     - Technical skills</div>
+<div class="help-description">clear      - Clear terminal</div>
+<div class="help-description">date       - Display current date</div>
+<div class="help-description">pwd        - Print working directory</div>
+</div>`,
+            
+            whoami: () => `<span class="success">Mamdous - Computer Science Student</span>
+<span class="info">Currently studying Computer Science and software development</span>
+<span class="info">Interests: Web Development, Algorithms, System Design</span>`,
+            
+            ls: () => `<div class="file-list">
+<div class="directory">documents/</div>
+<div class="directory">projects/</div>
+<div class="directory">skills/</div>
+<div class="file-item">about.txt</div>
+<div class="file-item">resume.pdf</div>
+<div class="file-item">contact.txt</div>
+<div class="executable">run_portfolio.sh</div>
+</div>`,
+            
+            about: () => `<span class="success">About Mamdous</span>
+<span class="output">I'm a Computer Science student focused on problem-solving
+and creating software solutions. Currently pursuing my degree while
+working on programming projects and learning new technologies.
+
+My journey in tech started with curiosity about how software works,
+and has developed into building applications and systems.</span>`,
+            
+            social: () => `<span class="success">Connect with me:</span>
+<div class="social-icons">
+<a href="https://github.com/mamdous-usual" target="_blank" class="social-icon" title="GitHub">
+<i class="fab fa-github"></i> GitHub
+</a>
+<a href="https://linkedin.com/in/mamdous-laskar" target="_blank" class="social-icon" title="LinkedIn">
+<i class="fab fa-linkedin"></i> LinkedIn
+</a>
+<a href="https://x.com/mamdouslaskar" target="_blank" class="social-icon" title="Twitter">
+<i class="fab fa-twitter"></i> Twitter
+</a>
+</div>`,
+            
+            contact: () => `<span class="success">Contact Information</span>
+<span class="info">📧 Email: mamdouslaskar@protonmail.com</span>
+<span class="info">📱 Feel free to reach out through any of my social media profiles</span>
+<span class="warning">Response time: Usually within 24-48 hours</span>`,
+            
+            skills: () => `<span class="success">Technical Skills</span>
+<span class="info">Languages:</span>     C/C++, Java, JavaScript, Python
+<span class="info">Frontend:</span>      HTML, CSS, React
+<span class="info">Backend:</span>       Node.js, Express, SpringBoot
+<span class="info">Database:</span>      MySQL, PostgreSQL, MongoDB
+<span class="info">Tools:</span>         Git, Docker, Linux, VS Code
+<span class="info">Currently Learning:</span> Data Structures and Algorithms`,
+            
+            date: () => new Date().toLocaleString(),
+            
+            pwd: () => '/home/student/portfolio',
+            
+            clear: () => {
+                output.innerHTML = '';
+                return '';
+            }
+        };
+        
+        function handleCatCommand(args) {
+            const filename = args[0];
+            const files = {
+                'about.txt': `Mamdous - Computer Science Student
+=====================================
+Computer Science student focused on technology and software development.
+Currently pursuing Bachelor's of Computer Application.
+Interested in solving problems and learning new technologies.`,
+                
+                'contact.txt': `Contact Information
+==================
+Email: mamdouslaskar@protonmail.com
+LinkedIn: linkedin.com/in/mamdous-laskar
+GitHub: github.com/mamdous-usual
+Twitter: @mamdouslaskar`,
+                
+                'resume.pdf': `[Binary file - Cannot display in terminal]
+Use a PDF viewer to open this file.
+Contains: Education, Experience, Projects, Skills`,
+            };
+            
+            if (!filename) {
+                return '<span class="error">cat: missing file operand</span>';
+            }
+            
+            if (files[filename]) {
+                return `<pre class="output">${files[filename]}</pre>`;
+            }
+            
+            return `<span class="error">cat: ${filename}: No such file or directory</span>`;
+        }
+        
+        function handleEchoCommand(args) {
+            return args.length > 0 ? args.join(' ') : '';
+        }
+        
+        function processCommand(command) {
+            const parts = command.trim().split(' ');
+            const cmd = parts[0].toLowerCase();
+            const args = parts.slice(1);
+            
+            if (cmd === 'cat') {
+                return handleCatCommand(args);
+            }
+            
+            if (cmd === 'echo') {
+                return handleEchoCommand(args);
+            }
+            
+            if (commands[cmd]) {
+                return commands[cmd]();
+            }
+            
+            return `<span class="error">Command not found: ${cmd}</span>
+<span class="info">Type 'help' for available commands.</span>`;
+        }
+        
+        function addOutput(content, isCommand = false) {
+            const div = document.createElement('div');
+            div.className = 'output-line';
+            
+            if (isCommand) {
+                div.innerHTML = `<span class="prompt">visitor@portfolio:~$</span> <span class="command">${content}</span>`;
+            } else {
+                div.innerHTML = content;
+            }
+            
+            output.appendChild(div);
+            div.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const command = input.value.trim();
+                
+                if (command) {
+                    addOutput(command, true);
+                    const result = processCommand(command);
+                    
+                    if (result) {
+                        addOutput(result);
+                    }
+                }
+                
+                input.value = '';
+            }
+        });
+        
+        // Easter eggs and additional functionality
+        const easterEggs = {
+            'sudo rm -rf /': () => '<span class="error">Nice try! But you don\'t have root access here 😉</span>',
+            'exit': () => '<span class="warning">There is no escape from the matrix...</span>',
+            'matrix': () => '<span class="success">Wake up, Neo...</span>',
+            'coffee': () => '<span class="info">☕ Coffee.exe is brewing... Please wait</span>',
+            'hello': () => '<span class="success">Hello there! Type \'help\' to get started.</span>'
+        };
+        
+        // Extend commands with easter eggs
+        Object.assign(commands, easterEggs);
+        
+        // Initial welcome message
+        setTimeout(() => {
+            addOutput('<span class="info">Welcome! I\'m Mamdous, a Computer Science student focused on technology.</span>');
+        }, 1000);
+    </script>
+</body>
+</html>
