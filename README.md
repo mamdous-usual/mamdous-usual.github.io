@@ -154,7 +154,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-**Mamdous Laskar** - Computer Science Student
+**Mamdous Laskar**
 
 - 📧 Email: [mamdouslaskar@protonmail.com](mailto:mamdouslaskar@protonmail.com)
 - 💼 LinkedIn: [linkedin.com/in/mamdous-laskar](https://linkedin.com/in/mamdous-laskar)
