@@ -67,12 +67,12 @@ Try these fun commands:
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/mamdous-usual/portfolio.git
+   git clone https://github.com/mamdous-usual/mamdous-usual.github.io.git
    ```
 
 2. Navigate to the project directory
    ```bash
-   cd portfolio
+   cd mamdous-usual.github.io.git
    ```
 
 3. Open `index.html` in your browser or serve it locally
