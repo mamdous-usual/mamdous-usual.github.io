@@ -1,4 +1,4 @@
-# Terminal Portfolio Website - Mamdous Laskar
+# Terminal-Style Personal Website
 
 A unique terminal-style personal portfolio website that simulates a Linux command-line interface. Built for Computer Science students and developers who appreciate the aesthetic of terminal environments.
 
@@ -8,7 +8,7 @@ A unique terminal-style personal portfolio website that simulates a Linux comman
 
 ## 📋 About
 
-This is an interactive terminal-themed portfolio website that showcases my profile as a Computer Science student. The site mimics a Linux terminal environment with a fully functional command-line interface, complete with ASCII art, terminal window styling, and interactive commands.
+This is my interactive terminal-themed portfolio website that showcases my profile as a Computer Science student. The site mimics a Linux terminal environment with a fully functional command-line interface, complete with ASCII art, terminal window styling, and interactive commands.
 
 ## 🛠️ Built With
 
@@ -56,45 +56,6 @@ Try these fun commands:
 - `matrix`
 - `coffee`
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Web browser (Chrome, Firefox, Safari, Edge)
-- No server setup required - runs entirely client-side
-
-### Installation
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/mamdous-usual/mamdous-usual.github.io.git
-   ```
-
-2. Navigate to the project directory
-   ```bash
-   cd mamdous-usual.github.io.git
-   ```
-
-3. Open `index.html` in your browser or serve it locally
-   ```bash
-   # Using Python 3
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve .
-   
-   # Or simply double-click index.html
-   ```
-
-## 📁 Project Structure
-
-```
-├── index.html          # Single-file application with embedded CSS & JS
-└── README.md           # This file
-```
-
-The entire application is contained in a single HTML file for simplicity and easy deployment.
-
 ## 🎨 Color Scheme
 
 The website uses the **One Dark Pro** color palette:
@@ -114,17 +75,6 @@ Fully responsive design with breakpoints for:
 - **Mobile** (480px and below): Compact terminal with adjusted typography
 - **Small Mobile** (320px and below): Ultra-compact mode
 
-## 🛠️ Customization
-
-To create your own terminal portfolio:
-
-1. **Personal Information**: Update the ASCII art, name, and bio in the HTML
-2. **Social Links**: Replace GitHub, LinkedIn, and Twitter URLs
-3. **Contact Info**: Update email and contact details
-4. **Skills**: Modify the technical skills list
-5. **Commands**: Add new commands in the JavaScript `commands` object
-6. **Color Scheme**: Adjust CSS custom properties for different terminal themes
-
 ## 🎯 Technical Features
 
 - **Command Processing**: Robust command parser with argument support
@@ -138,20 +88,6 @@ To create your own terminal portfolio:
 
 Inspired by Linux terminals, VS Code's integrated terminal, and classic hacker aesthetics. Perfect for developers, CS students, and anyone who loves the terminal environment.
 
-## 🤝 Contributing
-
-Suggestions and improvements welcome! Feel free to:
-
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature/improvement`)
-3. Commit your changes (`git commit -m 'Add terminal enhancement'`)
-4. Push to the branch (`git push origin feature/improvement`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 📞 Contact
 
 **Mamdous Laskar**
@@ -162,7 +98,5 @@ This project is open source and available under the [MIT License](LICENSE).
 - 🐦 Twitter: [@mamdouslaskar](https://twitter.com/mamdouslaskar)
 
 ---
-
-⭐ **Star this repo if you found it helpful!**
 
 *Happy coding in the terminal! 🚀*
