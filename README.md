@@ -4,7 +4,7 @@ A unique terminal-style personal portfolio website that simulates a Linux comman
 
 ## 🌐 Live Demo
 
-[View Live Site](https://mamdous.tech)
+[View Live Site](https://mamdous.me)
 
 ## 📋 About
 
