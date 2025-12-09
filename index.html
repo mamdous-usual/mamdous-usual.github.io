@@ -737,9 +737,128 @@
             padding-left: 12px;
             border-left: 2px solid rgba(97, 175, 239, 0.2);
         }
+
+        /* Loading Screen Styles */
+        #loadingScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1d23 0%, #282c34 50%, #1e2227 100%);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #loadingContent {
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+        }
+
+        #loadingText {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(12px, 2.5vw, 14px);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            min-height: 200px;
+        }
+
+        .loading-line {
+            margin-bottom: 8px;
+            opacity: 0;
+            animation: lineAppear 0.3s ease-out forwards;
+        }
+
+        @keyframes lineAppear {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .loading-system {
+            color: #61afef;
+            font-weight: 600;
+        }
+
+        .loading-ok {
+            color: #98c379;
+            font-weight: 600;
+        }
+
+        .loading-info {
+            color: #56b6c2;
+        }
+
+        .loading-warning {
+            color: #e5c07b;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(62, 68, 81, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #61afef, #56b6c2, #98c379);
+            background-size: 200% 100%;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.3s ease;
+            animation: progressShimmer 2s linear infinite;
+            box-shadow: 0 0 10px rgba(97, 175, 239, 0.5);
+        }
+
+        @keyframes progressShimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .loading-percentage {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            background: linear-gradient(90deg, #61afef, #98c379);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen">
+        <div id="loadingContent">
+            <div id="loadingText"></div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="loading-percentage" id="loadingPercentage">0%</div>
+        </div>
+    </div>
+
     <!-- Contact Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
@@ -1315,11 +1434,82 @@ Format: PDF (Portable Document Format)`,
         // Extend commands with easter eggs
         Object.assign(commands, easterEggs);
         
-        // Initial welcome message
-        setTimeout(() => {
-            addOutput('<span class="info">Welcome! I\'m Mamdous, a Computer Science Student.</span>');
-            addOutput('<span class="info">Try typing \'help\' to explore or start with \'about\' to learn more about me.</span>');
-        }, 1000);
+        // Loading Screen Animation
+        const loadingSequence = [
+            { text: '<span class="loading-system">SYSTEM INITIALIZATION</span>', delay: 100 },
+            { text: '<span class="loading-info">Loading core modules...</span>', delay: 200 },
+            { text: '<span class="loading-info">├─ Terminal Interface .................. </span><span class="loading-ok">[OK]</span>', delay: 300 },
+            { text: '<span class="loading-info">├─ Command Parser ...................... </span><span class="loading-ok">[OK]</span>', delay: 300 },
+            { text: '<span class="loading-info">├─ File System ......................... </span><span class="loading-ok">[OK]</span>', delay: 300 },
+            { text: '<span class="loading-info">└─ Network Stack ....................... </span><span class="loading-ok">[OK]</span>', delay: 300 },
+            { text: '', delay: 200 },
+            { text: '<span class="loading-system">Initializing portfolio data...</span>', delay: 300 },
+            { text: '<span class="loading-info">├─ Projects metadata ................... </span><span class="loading-ok">[OK]</span>', delay: 250 },
+            { text: '<span class="loading-info">├─ Skills database ..................... </span><span class="loading-ok">[OK]</span>', delay: 250 },
+            { text: '<span class="loading-info">└─ Contact information ................. </span><span class="loading-ok">[OK]</span>', delay: 250 },
+            { text: '', delay: 200 },
+            { text: '<span class="loading-warning">Establishing secure connection...</span>', delay: 300 },
+            { text: '<span class="loading-info">└─ WebSocket ready ..................... </span><span class="loading-ok">[OK]</span>', delay: 400 },
+            { text: '', delay: 200 },
+            { text: '<span class="loading-ok">✓ All systems operational</span>', delay: 300 },
+            { text: '<span class="loading-system">Starting terminal session...</span>', delay: 500 }
+        ];
+
+        function startLoadingSequence() {
+            const loadingText = document.getElementById('loadingText');
+            const progressBar = document.getElementById('progressBar');
+            const loadingPercentage = document.getElementById('loadingPercentage');
+            const loadingScreen = document.getElementById('loadingScreen');
+            
+            let currentLine = 0;
+            const totalLines = loadingSequence.length;
+            
+            function showNextLine() {
+                if (currentLine >= totalLines) {
+                    // Loading complete
+                    setTimeout(() => {
+                        loadingScreen.style.transition = 'opacity 0.8s ease';
+                        loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingScreen.style.display = 'none';
+                            // Show welcome message
+                            setTimeout(() => {
+                                addOutput('<span class="info">Welcome! I\'m Mamdous, a Computer Science Student.</span>');
+                                addOutput('<span class="info">Try typing \'help\' to explore or start with \'about\' to learn more about me.</span>');
+                            }, 300);
+                        }, 800);
+                    }, 500);
+                    return;
+                }
+                
+                const line = loadingSequence[currentLine];
+                const lineDiv = document.createElement('div');
+                lineDiv.className = 'loading-line';
+                lineDiv.innerHTML = line.text;
+                loadingText.appendChild(lineDiv);
+                
+                // Update progress
+                const progress = ((currentLine + 1) / totalLines) * 100;
+                progressBar.style.width = progress + '%';
+                loadingPercentage.textContent = Math.round(progress) + '%';
+                
+                currentLine++;
+                setTimeout(showNextLine, line.delay);
+            }
+            
+            showNextLine();
+        }
+
+        // Start loading sequence on page load
+        window.addEventListener('load', () => {
+            setTimeout(startLoadingSequence, 500);
+        });
+        
+        // Initial welcome message (removed, now in loading sequence)
+        // setTimeout(() => {
+        //     addOutput('<span class="info">Welcome! I\'m Mamdous, a Computer Science Student.</span>');
+        //     addOutput('<span class="info">Try typing \'help\' to explore or start with \'about\' to learn more about me.</span>');
+        // }, 1000);
     </script>
 </body>
 </html>
