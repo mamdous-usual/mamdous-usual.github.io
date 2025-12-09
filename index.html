@@ -1486,10 +1486,12 @@ Format: PDF (Portable Document Format)`,
                         
                         setTimeout(() => {
                             loadingScreen.style.display = 'none';
-                            // Show welcome message
+                            // Show welcome message and focus input
                             setTimeout(() => {
                                 addOutput('<span class="info">Welcome! I\'m Mamdous, a Computer Science Student.</span>');
                                 addOutput('<span class="info">Try typing \'help\' to explore or start with \'about\' to learn more about me.</span>');
+                                // Focus the input field
+                                input.focus();
                             }, 300);
                         }, 800);
                     }, 500);
