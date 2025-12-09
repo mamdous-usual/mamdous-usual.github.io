@@ -93,7 +93,7 @@ Inspired by Linux terminals, VS Code's integrated terminal, and classic hacker a
 **Mamdous Laskar**
 
 - 📧 Email: [mamdouslaskar@protonmail.com](mailto:mamdouslaskar@protonmail.com)
-- 💼 LinkedIn: [linkedin.com/in/mamdous-laskar](https://linkedin.com/in/mamdous-laskar)
+- 💼 LinkedIn: [linkedin.com/in/mamdous-laskar](https://linkedin.com/in/mamdouslaskar)
 - 🐙 GitHub: [github.com/mamdous-usual](https://github.com/mamdous-usual)
 - 🐦 Twitter: [@mamdouslaskar](https://twitter.com/mamdouslaskar)
 
