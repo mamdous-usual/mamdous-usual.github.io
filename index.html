@@ -168,6 +168,15 @@
             background: linear-gradient(135deg, #1a1d23 0%, #282c34 50%, #1e2227 100%);
             background-size: 200% 200%;
             animation: gradientShift 15s ease infinite;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0s 0.5s;
+        }
+
+        .terminal-container.loaded {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease, visibility 0s;
         }
 
         @keyframes gradientShift {
@@ -1470,6 +1479,11 @@ Format: PDF (Portable Document Format)`,
                     setTimeout(() => {
                         loadingScreen.style.transition = 'opacity 0.8s ease';
                         loadingScreen.style.opacity = '0';
+                        
+                        // Show terminal container
+                        const terminalContainer = document.querySelector('.terminal-container');
+                        terminalContainer.classList.add('loaded');
+                        
                         setTimeout(() => {
                             loadingScreen.style.display = 'none';
                             // Show welcome message
