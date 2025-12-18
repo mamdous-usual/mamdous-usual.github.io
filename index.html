@@ -551,12 +551,15 @@
             background-clip: text;
             background-size: 200% 200%;
             animation: gradientFlow 8s ease infinite;
-            font-size: clamp(6px, 1.8vw, 12px);
+            font-size: clamp(8px, 1.5vw, 12px);
             line-height: 1.2;
             margin: clamp(8px, 3vw, 16px) 0;
             overflow-x: auto;
             white-space: pre;
             font-weight: 500;
+            display: block;
+            width: fit-content;
+            max-width: 100%;
         }
 
         @keyframes gradientFlow {
@@ -658,7 +661,8 @@
             }
             
             .ascii-art {
-                font-size: 8px;
+                font-size: 7px;
+                transform-origin: left top;
             }
 
             .modal-content {
@@ -689,8 +693,9 @@
             }
             
             .ascii-art {
-                font-size: 6px;
+                font-size: 5px;
                 margin: 8px 0;
+                transform-origin: left top;
             }
             
             .file-list {
@@ -711,9 +716,9 @@
 
         @media (max-width: 320px) {
             .ascii-art {
-                font-size: 5px;
-                transform: scale(0.8);
+                font-size: 4px;
                 transform-origin: left top;
+                margin: 6px 0;
             }
             
             .social-icons {
