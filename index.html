@@ -551,15 +551,35 @@
             background-clip: text;
             background-size: 200% 200%;
             animation: gradientFlow 8s ease infinite;
-            font-size: clamp(8px, 1.5vw, 12px);
+            font-size: clamp(10px, 1.8vw, 14px);
             line-height: 1.2;
             margin: clamp(8px, 3vw, 16px) 0;
             overflow-x: auto;
+            overflow-y: hidden;
             white-space: pre;
             font-weight: 500;
             display: block;
             width: fit-content;
             max-width: 100%;
+            padding-bottom: 8px;
+        }
+
+        .ascii-art::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .ascii-art::-webkit-scrollbar-track {
+            background: #21252b;
+            border-radius: 4px;
+        }
+
+        .ascii-art::-webkit-scrollbar-thumb {
+            background: #61afef;
+            border-radius: 4px;
+        }
+
+        .ascii-art::-webkit-scrollbar-thumb:hover {
+            background: #7ec0f7;
         }
 
         @keyframes gradientFlow {
@@ -661,7 +681,7 @@
             }
             
             .ascii-art {
-                font-size: 7px;
+                font-size: 9px;
                 transform-origin: left top;
             }
 
@@ -693,7 +713,7 @@
             }
             
             .ascii-art {
-                font-size: 5px;
+                font-size: 7px;
                 margin: 8px 0;
                 transform-origin: left top;
             }
@@ -716,7 +736,7 @@
 
         @media (max-width: 320px) {
             .ascii-art {
-                font-size: 4px;
+                font-size: 6px;
                 transform-origin: left top;
                 margin: 6px 0;
             }
